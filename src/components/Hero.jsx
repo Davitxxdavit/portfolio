@@ -2,13 +2,14 @@ import React from 'react'
 import './Hero.css'
 import { FaDownload, FaGithub, FaLinkedin, FaLocationArrow } from 'react-icons/fa'
 import davitPhoto from '../assets/davit.jpeg'
+import resumePDF from '../assets/Davit Beridze – Frontend Developer .pdf'
 
 const Hero = () => {
   const handleDownloadResume = () => {
     // Create a temporary link to download resume
     const link = document.createElement('a')
-    link.href = '/resume.pdf' // You'll need to add your resume PDF to the public folder
-    link.download = 'Davit_Beridze_Resume.pdf'
+    link.href = resumePDF
+    link.download = 'Davit_Beridze_Frontend_Developer.pdf'
     link.click()
   }
 

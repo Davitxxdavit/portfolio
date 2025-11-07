@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './Contact.css'
-import { FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaGithub, FaTelegram, FaPaperPlane } from 'react-icons/fa'
+import { FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaGithub, FaPaperPlane } from 'react-icons/fa'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -95,12 +95,6 @@ const Contact = () => {
       name: 'GitHub',
       url: 'https://github.com/Davitxxdavit',
       color: '#333'
-    },
-    {
-      icon: <FaTelegram />,
-      name: 'Telegram',
-      url: 'https://t.me/davitberidze',
-      color: '#0088cc'
     }
   ]
 

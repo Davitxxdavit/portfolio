@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './Footer.css'
-import { FaHeart, FaGithub, FaLinkedin, FaTelegram, FaEnvelope, FaArrowUp, FaCheck } from 'react-icons/fa'
+import { FaHeart, FaGithub, FaLinkedin, FaEnvelope, FaArrowUp, FaCheck } from 'react-icons/fa'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -51,13 +51,6 @@ const Footer = () => {
       url: 'https://www.linkedin.com/in/davit-beridze-8616332b5/',
       name: 'LinkedIn',
       color: '#0077B5',
-      type: 'link'
-    },
-    {
-      icon: <FaTelegram />,
-      url: 'https://t.me/davitberidze',
-      name: 'Telegram',
-      color: '#0088cc',
       type: 'link'
     },
     {
