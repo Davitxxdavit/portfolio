@@ -1,0 +1,422 @@
+.app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+  color: white;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.app::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Decorative Background Elements */
+.app::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background-image: 
+    /* Diagonal lines */
+    linear-gradient(45deg, transparent 40%, rgba(120, 119, 198, 0.1) 40%, rgba(120, 119, 198, 0.1) 41%, transparent 41%),
+    linear-gradient(-45deg, transparent 40%, rgba(255, 119, 198, 0.1) 40%, rgba(255, 119, 198, 0.1) 41%, transparent 41%),
+    /* Grid lines */
+    linear-gradient(0deg, transparent 98%, rgba(120, 219, 255, 0.1) 98%),
+    linear-gradient(90deg, transparent 98%, rgba(120, 219, 255, 0.1) 98%);
+  background-size: 60px 60px, 80px 80px, 40px 40px, 40px 40px;
+  background-position: 0 0, 0 0, 0 0, 0 0;
+  animation: backgroundMove 20s linear infinite;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, rgba(120, 119, 198, 0.8), rgba(255, 119, 198, 0.8));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, rgba(255, 119, 198, 0.8), rgba(120, 219, 255, 0.8));
+}
+
+/* Selection color */
+::selection {
+  background: rgba(120, 119, 198, 0.3);
+  color: white;
+}
+
+/* Focus styles */
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 2px solid rgba(120, 119, 198, 0.8);
+  outline-offset: 2px;
+}
+
+/* Global container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+}
+
+.section-padding {
+  padding: 100px 0;
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes backgroundMove {
+  0% {
+    background-position: 0 0, 0 0, 0 0, 0 0;
+  }
+  100% {
+    background-position: 60px 60px, -80px 80px, 40px 40px, -40px 40px;
+  }
+}
+
+/* Floating geometric shapes */
+.geometric-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.geometric-shape {
+  position: absolute;
+  opacity: 0.1;
+  animation: float 6s ease-in-out infinite;
+}
+
+.geometric-shape.circle {
+  border-radius: 50%;
+  border: 2px solid rgba(120, 119, 198, 0.3);
+}
+
+.geometric-shape.circle-fill {
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 119, 198, 0.2) 0%, transparent 70%);
+}
+
+.geometric-shape.line {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(120, 219, 255, 0.3), transparent);
+  animation: slideHorizontal 8s linear infinite;
+}
+
+.geometric-shape.diamond {
+  transform: rotate(45deg);
+  border: 1px solid rgba(120, 219, 255, 0.2);
+}
+
+/* Individual shape positions and sizes */
+.shape-1 {
+  top: 10%;
+  left: 15%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  top: 20%;
+  right: 20%;
+  width: 60px;
+  height: 60px;
+  animation-delay: -2s;
+}
+
+.shape-3 {
+  top: 60%;
+  left: 10%;
+  width: 100px;
+  height: 100px;
+  animation-delay: -4s;
+}
+
+.shape-4 {
+  bottom: 20%;
+  right: 15%;
+  width: 70px;
+  height: 70px;
+  animation-delay: -1s;
+}
+
+.shape-5 {
+  top: 30%;
+  left: 50%;
+  width: 200px;
+  height: 2px;
+  animation-delay: -3s;
+}
+
+.shape-6 {
+  bottom: 40%;
+  left: 70%;
+  width: 150px;
+  height: 2px;
+  animation-delay: -5s;
+}
+
+.shape-7 {
+  top: 70%;
+  right: 40%;
+  width: 40px;
+  height: 40px;
+  animation-delay: -6s;
+}
+
+.shape-8 {
+  top: 15%;
+  left: 70%;
+  width: 90px;
+  height: 90px;
+  animation-delay: -1.5s;
+}
+
+@keyframes slideHorizontal {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateX(calc(100vw + 100px));
+    opacity: 0;
+  }
+}
+
+/* Additional decorative elements */
+.geometric-shape.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(120, 219, 255, 0.6);
+}
+
+.geometric-shape.pulse-dot {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.geometric-shape.triangle {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 25px solid rgba(255, 119, 198, 0.2);
+  animation: rotate 10s linear infinite;
+}
+
+/* Additional shape positions */
+.dot-1 {
+  top: 25%;
+  left: 25%;
+  animation-delay: 0s;
+}
+
+.dot-2 {
+  top: 75%;
+  right: 30%;  
+  animation-delay: -1s;
+}
+
+.dot-3 {
+  bottom: 30%;
+  left: 60%;
+  animation-delay: -2s;
+}
+
+.triangle-1 {
+  top: 40%;
+  right: 10%;
+  animation-delay: -3s;
+}
+
+.triangle-2 {
+  bottom: 60%;
+  left: 80%;
+  animation-delay: -4s;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(120, 219, 255, 0.7);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+    box-shadow: 0 0 0 10px rgba(120, 219, 255, 0);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Connecting lines that appear and disappear */
+.connecting-line {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(120, 119, 198, 0.4), transparent);
+  pointer-events: none;
+  animation: lineAppear 8s ease-in-out infinite;
+}
+
+.line-1 {
+  top: 30%;
+  left: 20%;
+  width: 150px;
+  transform: rotate(25deg);
+  animation-delay: 0s;
+}
+
+.line-2 {
+  bottom: 40%;
+  right: 25%;
+  width: 120px;
+  transform: rotate(-15deg);
+  animation-delay: -3s;
+}
+
+.line-3 {
+  top: 65%;
+  left: 45%;
+  width: 100px;
+  transform: rotate(45deg);
+  animation-delay: -6s;
+}
+
+@keyframes lineAppear {
+  0%, 70% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  85% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+/* Subtle grid overlay */
+.app::after {
+  animation: backgroundMove 20s linear infinite, gridPulse 4s ease-in-out infinite;
+}
+
+@keyframes gridPulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.1;
+  }
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .section-padding {
+    padding: 60px 0;
+  }
+}
