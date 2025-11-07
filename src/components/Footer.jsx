@@ -65,6 +65,7 @@ const Footer = () => {
   const quickLinks = [
     { name: 'Home', id: 'hero' },
     { name: 'About', id: 'about' },
+    { name: 'Services', id: 'services' },
     { name: 'Projects', id: 'projects' },
     { name: 'Contact', id: 'contact' }
   ]
@@ -169,7 +170,7 @@ const Footer = () => {
         <div className="footer-bottom">
           <div className="footer-bottom-content">
             <p>
-              © {currentYear} Davit Beridze. Made with <FaHeart className="heart-icon" /> in Batumi, Georgia
+              © {currentYear} Davit Beridze.
             </p>
             <button onClick={handleScrollToTop} className="back-to-top glass-effect">
               <FaArrowUp />
